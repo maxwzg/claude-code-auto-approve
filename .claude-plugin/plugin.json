@@ -1,0 +1,44 @@
+{
+  "name": "claude-code-auto-approve",
+  "version": "1.0.0",
+  "description": "智能 Bash 命令自动批准插件 - 支持复合命令解析、自动学习和安全检查",
+  "author": {
+    "name": "Wu Zhi Gang"
+  },
+  "homepage": "https://github.com/maxwzg/claude-code-auto-approve",
+  "repository": "https://github.com/maxwzg/claude-code-auto-approve",
+  "license": "MIT",
+  "keywords": [
+    "auto-approve",
+    "bash",
+    "security",
+    "hooks",
+    "compound-commands"
+  ],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/approve-compound-bash.sh",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/post-process-compound-bash.sh",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}
