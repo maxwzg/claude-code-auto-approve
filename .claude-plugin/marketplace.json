@@ -1,36 +1,33 @@
 {
   "name": "claude-code-auto-approve",
-  "displayName": "Auto Approve Plugin",
-  "description": "智能 Bash 命令自动批准插件 - 支持复合命令解析、自动学习和安全检查",
-  "version": "1.0.0",
-  "author": "Wu Zhi Gang",
-  "homepage": "https://github.com/maxwzg/claude-code-auto-approve",
-  "repository": "https://github.com/maxwzg/claude-code-auto-approve",
-  "license": "MIT",
-  "keywords": [
-    "auto-approve",
-    "bash",
-    "security",
-    "hooks",
-    "compound-commands",
-    "automation",
-    "permissions"
-  ],
-  "categories": [
-    "productivity",
-    "developer-tools",
-    "security"
-  ],
-  "source": {
-    "type": "local",
-    "path": "."
+  "owner": {
+    "name": "Wu Zhi Gang"
   },
-  "icon": "icon.png",
-  "screenshots": [
-    "screenshot-1.png",
-    "screenshot-2.png"
-  ],
-  "readme": "README.md",
-  "changelog": "CHANGELOG.md",
-  "licenseFile": "LICENSE"
+  "metadata": {
+    "description": "智能 Bash 命令自动批准插件 - 支持复合命令解析、自动学习和安全检查"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-auto-approve",
+      "source": "./",
+      "description": "智能 Bash 命令自动批准插件 - 支持复合命令解析、自动学习和安全检查",
+      "version": "1.0.0",
+      "author": {
+        "name": "Wu Zhi Gang"
+      },
+      "homepage": "https://github.com/maxwzg/claude-code-auto-approve",
+      "repository": "https://github.com/maxwzg/claude-code-auto-approve",
+      "license": "MIT",
+      "keywords": [
+        "auto-approve",
+        "bash",
+        "security",
+        "hooks",
+        "compound-commands",
+        "automation",
+        "permissions"
+      ],
+      "category": "developer-tools"
+    }
+  ]
 }
