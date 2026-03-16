@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-16
+
+### Fixed
+- 修正 marketplace.json 格式以符合 Claude Code 规范
+- 修正 add-to-allowlist.sh 配置文件路径，确保自动学习功能正常工作
+  - 使用 CLAUDE_PROJECT_DIR 环境变量定位项目配置
+  - 自动创建 .claude/ 目录
+  - 兼容 Plugin 环境和手动调用
+
 ## [1.0.0] - 2026-03-16
 
 ### Added
@@ -23,4 +32,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 自动检测并拒绝包含危险子命令的复合命令
 - 区分安全命令和危险命令的自动学习策略
 
+[1.0.2]: https://github.com/maxwzg/claude-code-auto-approve/releases/tag/v1.0.2
 [1.0.0]: https://github.com/maxwzg/claude-code-auto-approve/releases/tag/v1.0.0
