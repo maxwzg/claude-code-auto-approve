@@ -50,13 +50,21 @@ check_dependencies() {
 }
 
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
-settings_file="$script_dir/../settings.local.json"
+# 使用 CLAUDE_PROJECT_DIR 环境变量定位项目配置文件
+# 如果未设置（手动调用时），默认使用当前目录
+project_root="${CLAUDE_PROJECT_DIR:-.}"
+settings_file="$project_root/.claude/settings.local.json"
 
 # 添加命令到允许列表
 add_commands() {
   local -a commands=("$@")
 
-  # 确保配置文件存在
+  # 确保配置文件和目录存在
+  settings_dir="$(dirname "$settings_file")"
+  if [[ ! -d "$settings_dir" ]]; then
+    mkdir -p "$settings_dir"
+  fi
+
   if [[ ! -f "$settings_file" ]]; then
     echo '{"permissions":{"allow":[],"deny":[],"ask":[]}}' > "$settings_file"
   fi
